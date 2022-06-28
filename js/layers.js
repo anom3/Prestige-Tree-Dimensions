@@ -420,7 +420,7 @@ addLayer("p", {
             rows: 7,
             cols: 4,
 			11: {
-				title: "Prestige Upgrade 11",
+				title: "Prestige Boost",
                 description: "Point generation is faster based on your unspent Prestige Points.",
                 cost: new Decimal(20),
                 unlocked() { return true; }, // The upgrade is only visible when this is true
@@ -436,7 +436,7 @@ addLayer("p", {
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
             },
 			12: {
-				title: "Prestige Upgrade 12",
+				title: "Self-Synergy",
                 description: "Point generation is faster based on your Point amount.",
                 cost: new Decimal(10000),
                 unlocked() { return player.b.unlocked || player.g.unlocked  },
@@ -452,7 +452,7 @@ addLayer("p", {
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
             },
 			13: {
-				title: "Prestige Upgrade 13",
+				title: "More Prestige",
                 description: "Gain More Prestige Points.",
                 cost: new Decimal(2e6),
                 unlocked() { return player.b.unlocked || player.g.unlocked  },
@@ -480,7 +480,7 @@ addLayer("p", {
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
             },
 			21: {
-				title: "Prestige Upgrade 21",
+				title: "Upgrade Power",
 				description: "Point generation is faster based on your Prestige Upgrades bought.",
 				cost: new Decimal(1e20),
 				unlocked(){ return player.b.unlocked&&player.g.unlocked },
@@ -499,7 +499,7 @@ addLayer("p", {
 				effectDisplay() { return format(this.effect())+"x" },
 			},
 			22: {
-				title: "Prestige Upgrade 22",
+				title: "Reverse Prestige Boost",
 				description:  "Prestige Point gain is boosted by your Point amount.",
 				cost: new Decimal(1e25),
 				unlocked(){ return player.b.unlocked&&player.g.unlocked  },
@@ -514,7 +514,7 @@ addLayer("p", {
 				effectDisplay() { return format(this.effect())+"x" },
 			},
 			23: {
-				title: "Prestige Upgrade 23",
+				title: "Prestige Recursion",
 				description:  "Prestige Point gain is boosted by your Prestige Point amount.",
 				cost: new Decimal(1e30),
 				unlocked(){ return player.b.unlocked&&player.g.unlocked  },
@@ -530,49 +530,49 @@ addLayer("p", {
 				effectDisplay() { return format(this.effect())+"x" },
 			},
 			31: {
-				title: "Prestige Upgrade 31",
+				title: "Not As Useless",
 				description: "The upgrade above is stronger.",
 				cost: new Decimal("1e560"),
 				unlocked() { return player.t.unlocked&&player.s.unlocked },
 			},
 			32: {
-				title: "Prestige Upgrade 32",
+				title: "Better Prestige Boost Reversion",
 				description: "The upgrade above is stronger.",
 				cost: new Decimal("1e650"),
 				unlocked() { return player.t.unlocked&&player.s.unlocked },
 			},
 			33: {
-				title: "Prestige Upgrade 33",
+				title: "Prestige Synergy",
 				description: "The upgrade above is stronger.",
 				cost: new Decimal("1e840"),
 				unlocked() { return player.t.unlocked&&player.s.unlocked },
 			},
 			41: {
-				title: "Prestige Upgrade 41",
-				description: "Prestige Upgrade 23 is stronger.",
+				title: "Better Recursion",
+				description: "Prestige Recursion is stronger.",
 				cost: new Decimal("1e2920"),
 				unlocked() { return player.e.unlocked },
 			},
 			42: {
-				title: "Prestige Upgrade 42",
-				description: "Prestige Upgrade 12 and 22 are stronger.",
+				title: "Point Boost Improvement",
+				description: "Self-Synergy and Reverse Prestige Boost are stronger.",
 				cost: new Decimal("1e4300"),
 				unlocked() { return player.e.unlocked },
 			},
 			43: {
-				title: "Prestige Upgrade 43",
-				description: "Prestige Upgrade 23 is stronger.",
+				title: "Incepting",
+				description: "Prestige Recursion is stronger.",
 				cost: new Decimal("1e8830"),
 				unlocked() { return player.e.unlocked },
 			},
 			14: {
-				title: "Prestige Upgrade 14",
+				title: "Hindering Prestige Boost?",
 				description: "Boost the left upgrade based on Hindrance Spirit.",
 				cost: new Decimal("1e31700"),
 				unlocked() { return player.h.challenges[22]>=1 || player.inf.points.gte(2)},
 			},
 			24: {
-				title: "Prestige Upgrade 24",
+				title: "Further Synergy",
 				description(){
 					let power=1;
 					if(hasUpgrade("p",34))power++;
